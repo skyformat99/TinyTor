@@ -169,14 +169,6 @@ struct directory_authority get_random_directory_authority() {
     return DIRECTORY_AUTHORITIES[rand() % directory_size];
 }
 
-char *_append_string(char *s1, char *s2) {
-    char *result = malloc(strlen(s1) + strlen(s2) + 1); // (!) Leave space for \0
-
-    strcpy(result, s1);
-    strcat(result, s2);
-    return result;
-}
-
 char *get_consensus_url(struct directory_authority authority) {
     char *consensus_url = NULL;
     char authority_port[sizeof(authority.clearnet_port) * 4 + 1];

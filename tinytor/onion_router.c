@@ -16,23 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <memory.h>
-#include <malloc.h>
 #include "onion_router.h"
+#include "utils.c"
 
 char *get_flag_name(Flag flag) {
     char *flag_names[] = {"Authority", "BadExit", "Exit", "Fast", "Guard", "H2Dir",
                           "NoEdConsensus", "Stable", "Running", "Valid", "V2Dir"};
 
     return flag_names[flag];
-}
-
-char *append_string(char *s1, char *s2) {
-    char *result = malloc(strlen(s1) + strlen(s2) + 1); // (!) Leave space for \0
-
-    strcpy(result, s1);
-    strcat(result, s2);
-    return result;
 }
 
 char *get_descriptor_url(struct onion_router router) {
