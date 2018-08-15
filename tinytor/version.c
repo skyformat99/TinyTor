@@ -21,6 +21,6 @@
 /**
  * @return The current version of TinyTor.
  */
-char* get_version() {
+char *get_version() {
     return VERSION;
 }
